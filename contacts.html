@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Двери Лэнд - Контакты</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>ДВЕРИ ЛЭНД</h1>
+                <p>Ваши надежные двери в новый мир</p>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Горизонтальное меню -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Услуги</a></li>
+                <li><a class="active" href="contacts.html"><i class="fas fa-address-book"></i> Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="main-container">
+        <!-- Блок с социальными сетями -->
+        <aside class="map-sidebar">
+    <h3>Мы на карте</h3>
+    <div class="map-container">
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=85.767815%2C52.440224&z=17" frameborder="0" allowfullscreen="true"></iframe>
+    </div>
+</aside>
+        
+        <!-- Основной контент -->
+        <main>
+            <section class="contacts">
+                <h2>Наши контакты</h2>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Адрес</h3>
+                            <p>Офис "Кедр", 3 мкр, 131 территория ТЦ Кедр</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h3>Телефон</h3>
+                            <p>+7 923 507 14 59</p>
+                            <p>WhatsApp/Telegram: +7 923 507 14 59</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>График работы</h3>
+                            <p>Пн-Пт: 9:00 - 20:00</p>
+                            <p>Сб-Вс: 10:00 - 18:00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>juggernn@outlook.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+               <div class="contact-form">
+    <h3>Форма обратной связи</h3>
+    <form id="contactForm" onsubmit="event.preventDefault(); sendEmail('contactForm', {
+        name: this.name.value,
+        phone: this.phone.value,
+        email: this.email.value,
+        message: this.message.value,
+        form_type: 'Обратная связь'
+    });">
+        <div class="form-group">
+            <label for="name">Ваше имя:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Телефон:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+        </div>
+        
+        <div class="form-group">
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        
+        <button type="submit" class="btn">Отправить сообщение</button>
+    </form>
+</div>
+            </section>
+        </main>
+    </div>
+
+    <nav>
+    <div class="container">
+        <ul>
+            <li><a href="interior-doors.html"><i class="fas fa-door-open"></i> Межкомнатные</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Двери Лэнд</h3>
+                    <p>Офис "Кедр", 3 мкр, 131 территория ТЦ Кедр</p>
+                </div>
+                <div class="footer-contact">
+                    <p>Телефон: +7 923 507 14 59</p>
+                    <p>Email: taskaevdanil09@gmail.com</p>
+                </div>
+                <div class="footer-hours">
+                    <p>Пн-Пт: 9:00 - 20:00</p>
+                    <p>Сб-Вс: 10:00 - 18:00</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 "Двери Лэнд". Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

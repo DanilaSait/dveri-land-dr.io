@@ -1,0 +1,115 @@
+<!-- В <head> -->
+<title>Двери Лэнд - Раздвижные системы</title>
+
+<!-- В <nav> -->
+<li><a class="active" href="sliding-systems.html"><i class="fas fa-sliders-h"></i> Раздвижные</a></li>
+
+<!-- Основной контент -->
+<section class="doors">
+    <h2>Раздвижные системы</h2>
+    <p class="subtitle">Современные решения для экономии пространства</p>
+    
+    <div class="door-filters">
+        <button class="filter-btn active">Все</button>
+        <button class="filter-btn">Купе</button>
+        <button class="filter-btn">Кассетные</button>
+        <button class="filter-btn">Рото-двери</button>
+    </div>
+    
+    <div class="door-list">
+        <!-- Система 1 -->
+        <div class="door-item">
+            <div class="door-image">
+                <img src="images/sliding1.jpg" alt="Система Компакт">
+            </div>
+            <div class="door-info">
+                <h3>Система "Компакт"</h3>
+                <div class="door-specs">
+                    <p><i class="fas fa-ruler-combined"></i> Толщина: 40 мм</p>
+                    <p><i class="fas fa-palette"></i> Цвет: Белый, дуб, орех</p>
+                    <p><i class="fas fa-compress-alt"></i> Экономия пространства: до 70%</p>
+                    <p><i class="fas fa-cogs"></i> Механизм: Роликовый верхний</p>
+                </div>
+                <div class="door-price">
+                    <span class="price">18 900 руб.</span>
+                    <button class="btn order-btn" data-door="Система 'Компакт'">Заказать</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Система 2 -->
+        <div class="door-item">
+            <div class="door-image">
+                <img src="images/sliding2.jpg" alt="Система Премиум">
+            </div>
+            <div class="door-info">
+                <h3>Система "Премиум"</h3>
+                <div class="door-specs">
+                    <p><i class="fas fa-ruler-combined"></i> Толщина: 60 мм</p>
+                    <p><i class="fas fa-palette"></i> Цвет: Любой по RAL</p>
+                    <p><i class="fas fa-compress-alt"></i> Экономия пространства: до 90%</p>
+                    <p><i class="fas fa-cogs"></i> Механизм: Скрытый нижний</p>
+                </div>
+                <div class="door-price">
+                    <span class="price">32 500 руб.</span>
+                    <button class="btn order-btn" data-door="Система 'Премиум'">Заказать</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Модальное окно заказа -->
+<div class="modal" id="orderModal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Заказ двери</h2>
+        <p>Вы выбрали: <span id="selectedDoor"></span></p>
+        <form action="https://formspree.io/f/ВАШ_ID" method="POST">
+            <input type="hidden" name="door_model" id="doorModel">
+            
+            <div class="form-group">
+                <label for="orderName">Ваше имя:</label>
+                <input type="text" id="orderName" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="orderPhone">Телефон:</label>
+                <input type="tel" id="orderPhone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="orderEmail">Email:</label>
+                <input type="email" id="orderEmail" name="email">
+            </div>
+            
+            <div class="form-group">
+                <label for="orderComment">Комментарий к заказу:</label>
+                <textarea id="orderComment" name="message" rows="3"></textarea>
+            </div>
+            
+            <button type="submit" class="btn">Отправить заказ</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Скрипт для модального окна заказа
+    document.querySelectorAll('.order-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const doorName = this.getAttribute('data-door');
+            document.getElementById('selectedDoor').textContent = doorName;
+            document.getElementById('doorModel').value = doorName;
+            document.getElementById('orderModal').style.display = 'block';
+        });
+    });
+    
+    document.querySelector('.close').addEventListener('click', function() {
+        document.getElementById('orderModal').style.display = 'none';
+    });
+    
+    window.addEventListener('click', function(event) {
+        if (event.target == document.getElementById('orderModal')) {
+            document.getElementById('orderModal').style.display = 'none';
+        }
+    });
+</script>
